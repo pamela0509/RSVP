@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMS Platform - Aprende en Línea</title>
+    <meta name="description" content="Plataforma de aprendizaje en línea con cursos de UX/UI, ciberseguridad e inteligencia artificial">
+    <meta name="keywords" content="LMS, cursos online, UX/UI, ciberseguridad, inteligencia artificial">
+    <meta property="og:title" content="LMS Platform - Aprende en Línea">
+    <meta property="og:description" content="Plataforma de aprendizaje en línea con cursos especializados">
+    <meta name="twitter:title" content="LMS Platform - Aprende en Línea">
+    <meta name="twitter:description" content="Plataforma de aprendizaje en línea con cursos especializados">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+            <div class="container-fluid">
+                <button class="btn btn-link text-white me-3" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <a class="navbar-brand text-white fw-bold" href="#">
+                    <i class="fas fa-graduation-cap me-2"></i>
+                    LMS Platform
+                </a>
+                
+                <div class="navbar-nav ms-auto d-flex flex-row align-items-center">
+                    <a class="nav-link text-white me-3" href="#" onclick="showPage('home')">
+                        <i class="fas fa-home me-1"></i>Inicio
+                    </a>
+                    <a class="nav-link text-white me-3" href="#" onclick="showPage('blog')">
+                        <i class="fas fa-blog me-1"></i>Blog
+                    </a>
+                    <button class="btn btn-outline-light me-3" id="loginBtn" onclick="toggleLogin()">
+                        <i class="fas fa-sign-in-alt me-1"></i>
+                        <span id="loginText">Iniciar sesión</span>
+                    </button>
+                    <button class="btn btn-link text-white me-3" id="profileBtn" onclick="showPage('profile')" style="display: none;">
+                        <i class="fas fa-user me-1"></i>Mi perfil
+                    </button>
+                    <button class="btn btn-link text-white position-relative" onclick="showCart()">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Sidebar -->
+        <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+        <div class="sidebar" id="sidebar">
+            <div class="p-3 border-bottom">
+                <h5 class="text-white mb-0">
+                    <i class="fas fa-graduation-cap me-2"></i>
+                    Navegación
+                </h5>
+            </div>
+            <a href="#" class="sidebar-item" onclick="showPage('home')">
+                <i class="fas fa-home me-3"></i>Inicio
+            </a>
+            <a href="#" class="sidebar-item" onclick="showPage('courses')">
+                <i class="fas fa-book me-3"></i>Mis cursos
+            </a>
+            <a href="#" class="sidebar-item" onclick="showPage('explore')">
+                <i class="fas fa-search me-3"></i>Explorar
+            </a>
+            <a href="#" class="sidebar-item" onclick="showPage('certifications')">
+                <i class="fas fa-certificate me-3"></i>Certificaciones
+            </a>
+            <a href="#" class="sidebar-item" onclick="showPage('favorites')">
+                <i class="fas fa-heart me-3"></i>Favoritos
+                <span class="badge bg-danger ms-2" id="favoritesBadge">0</span>
+            </a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content" id="mainContent">
+            <!-- Content will be loaded here -->
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer-custom mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>LMS Platform</h5>
+                        <p>Tu plataforma de aprendizaje en línea</p>
+                    </div>
+                    <div class="col-md-6 text-end">
+                        <h6>Contacto</h6>
+                        <p>Email: info@lmsplatform.com<br>
+                        Teléfono: +1 234 567 8900</p>
+                        <button class="btn btn-outline-light btn-sm" onclick="showPage('contact')">
+                            Página de Contacto
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/pages.js"></script>
+    <script src="js/pages2.js"></script>
+    <script src="js/pages3.js"></script>
+    <script src="js/app.js"></script>
+    <script type="text/babel" src="components/Navbar.js"></script>
+    <script type="text/babel" src="components/Sidebar.js"></script>
+    <script type="text/babel" src="components/CourseCard.js"></script>
+    <script type="text/babel" src="components/HomePage.js"></script>
+    <script type="text/babel" src="components/CoursesPage.js"></script>
+    <script type="text/babel" src="components/ProfilePage.js"></script>
+</body>
+</html>
